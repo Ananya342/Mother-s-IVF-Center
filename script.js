@@ -1,3 +1,11 @@
+// Always start at top on refresh
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
 // Mobile navigation toggle
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
