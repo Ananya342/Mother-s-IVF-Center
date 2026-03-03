@@ -17,7 +17,6 @@ if (navToggle && nav) {
     navToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Close nav when a link is clicked (on mobile)
   nav.addEventListener("click", (event) => {
     const target = event.target;
     if (target.matches(".nav__link") && window.innerWidth < 880) {
@@ -50,51 +49,3 @@ const yearSpan = document.getElementById("year");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
-
-// Simple, lightweight form handling (front-end only)
-const form = document.getElementById("appointment-form");
-const successEl = document.getElementById("form-success");
-
-if (form) {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const nameInput = form.elements.namedItem("name");
-    const phoneInput = form.elements.namedItem("phone");
-
-    const nameError = document.querySelector('[data-error-for="name"]');
-    const phoneError = document.querySelector('[data-error-for="phone"]');
-
-    let isValid = true;
-
-    // Reset messages
-    if (successEl) successEl.textContent = "";
-    if (nameError) nameError.textContent = "";
-    if (phoneError) phoneError.textContent = "";
-
-    // Name validation
-    if (!nameInput.value.trim()) {
-      if (nameError) nameError.textContent = "Please enter your full name.";
-      isValid = false;
-    }
-
-    // Very simple phone validation (you can adjust pattern later)
-    if (!phoneInput.value.trim()) {
-      if (phoneError) phoneError.textContent = "Please enter your mobile number.";
-      isValid = false;
-    } else if (phoneInput.value.replace(/\D/g, "").length < 10) {
-      if (phoneError) phoneError.textContent = "Please enter a valid phone number.";
-      isValid = false;
-    }
-
-    if (!isValid) return;
-
-    // Simulated submit
-    form.reset();
-    if (successEl) {
-      successEl.textContent =
-        "Thank you. Our patient care team will contact you shortly to confirm your appointment.";
-    }
-  });
-}
-

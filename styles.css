@@ -773,6 +773,48 @@ select {
   color: var(--color-text-muted);
 }
 
+.contact-cta {
+  margin-top: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Contact section: highlight and larger type */
+#contact .eyebrow {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+#contact .section__title {
+  font-size: 1.85rem;
+}
+
+#contact .section__subtitle {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+#contact .contact-info__item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+#contact .contact-info__item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+#contact .contact-cta {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  color: var(--color-text-main);
+}
+
 .form {
   background-color: #ffffff;
   border-radius: var(--radius-lg);
